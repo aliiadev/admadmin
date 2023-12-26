@@ -1,0 +1,14 @@
+{
+    "FORM": {
+        "M0001": "Username is required",
+        "M0002": "Password is required"
+    },
+    "page": {
+        "login": {
+            "T0001": "Hi, Welcome Back",
+            "T0002": "Enter your credentials to continue",
+            "T0003": "Login",
+            "T0004": "Don't have an account?"
+        }
+    }
+}
