@@ -15,6 +15,7 @@ const Login = () => {
 
     const onSubmit = async (values: FieldValues) => {
         console.log(`login data ${JSON.stringify(values)}`)
+        localStorage.setItem('key', 'true');
         navigate('/')
     }
 

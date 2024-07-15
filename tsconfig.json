@@ -30,6 +30,7 @@
       "@assets/*": ["assets/*"],
       "@utils/*": ["utils/*"],
       "@configs/*": ["configs/*"],
+      "@helpers/*": ["helpers/*"],
     }
   },
   "include": ["src"],
