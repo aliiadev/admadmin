@@ -1,5 +1,5 @@
 import React from "react"
-import { IconBuildingStore, IconDashboard, IconLogin2 } from '@tabler/icons-react';
+import { IconNotebook, IconDashboard, IconLogin2 } from '@tabler/icons-react';
 
 export type NavbarSectionType = {
     icon?: React.ReactNode,
@@ -15,7 +15,7 @@ export const navbarSections: NavbarSectionType[] = [
         label: 'Dashboard'
     },
     {
-        icon: <IconBuildingStore />,
+        icon: <IconNotebook />,
         pageUrl: '/products',
         label: 'Products'
     },

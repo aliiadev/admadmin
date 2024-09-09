@@ -1,14 +1,24 @@
 import { navbarSections } from '@configs/NavbarSection';
 import { AppShell, Burger, Group, NavLink, ScrollArea } from '@mantine/core';
-import { useDisclosure } from '@mantine/hooks';
+import { useLocalStorage } from '@mantine/hooks';
 import { MantineLogo } from '@mantinex/mantine-logo';
 import { Outlet, NavLink as RNavLink } from 'react-router-dom';
 
 
 const Layout = () => {
 
-    const [mobileOpened, { toggle: toggleMobile }] = useDisclosure();
-    const [desktopOpened, { toggle: toggleDesktop }] = useDisclosure(true);
+    const [burgerOpen, setBurgerOpen] = useLocalStorage<
+        'open' | 'close'
+    >({
+        key: 'burger-open',
+        defaultValue: 'open',
+    });
+
+    const toggleBurgerOpen = () => {
+        setBurgerOpen(!isBurgerOpen ? 'open' : 'close');
+    }
+
+    const isBurgerOpen = burgerOpen === 'open';
 
     return (
         <AppShell
@@ -16,14 +26,14 @@ const Layout = () => {
             navbar={{
                 width: 260,
                 breakpoint: 'sm',
-                collapsed: { mobile: !mobileOpened, desktop: !desktopOpened },
+                collapsed: { mobile: !isBurgerOpen, desktop: !isBurgerOpen },
             }}
             padding="md"
         >
             <AppShell.Header>
                 <Group h="100%" px="md">
-                    <Burger opened={mobileOpened} onClick={toggleMobile} hiddenFrom="sm" size="sm" />
-                    <Burger opened={desktopOpened} onClick={toggleDesktop} visibleFrom="sm" size="sm" />
+                    <Burger opened={isBurgerOpen} onClick={toggleBurgerOpen} hiddenFrom="sm" size="sm" />
+                    <Burger opened={isBurgerOpen} onClick={toggleBurgerOpen} visibleFrom="sm" size="sm" />
                     <MantineLogo size={30} />
                 </Group>
             </AppShell.Header>

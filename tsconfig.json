@@ -24,7 +24,6 @@
     "paths": {
       "@pages/*": ["pages/*"],
       "@apis/*": ["apis/*"],
-      "@columnTitles/*": ["config/columns/entitiesTitle/*"],
       "@components": ["components/index.ts"],
       "@components/*": ["components/*"],
       "@assets/*": ["assets/*"],

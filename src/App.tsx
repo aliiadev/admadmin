@@ -33,7 +33,7 @@ function App() {
 	})
 
 	return (
-		<MantineProvider theme={theme} defaultColorScheme="dark">
+		<MantineProvider theme={theme} defaultColorScheme="light">
 			<NavigationProgress />
 			<RouterProvider router={routes} />
 		</MantineProvider>

@@ -1,6 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 import { Layout } from "@components";
-import { authenticationLoader } from "@helpers";
+import { authenticationLoader } from "@helpers/index";
 
 const routers = createBrowserRouter([
     {
